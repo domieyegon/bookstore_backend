@@ -28,7 +28,7 @@ public class BookDb {
     private double ourPrice;
     private boolean active;
     private String description;
-    private String inStockNumber;
+    private int inStockNumber;
     private MultipartFile bookImage;
 
     public Long getId() {
@@ -151,11 +151,11 @@ public class BookDb {
         this.description = description;
     }
 
-    public String getInStockNumber() {
+    public int getInStockNumber() {
         return inStockNumber;
     }
 
-    public void setInStockNumber(String inStockNumber) {
+    public void setInStockNumber(int inStockNumber) {
         this.inStockNumber = inStockNumber;
     }
 

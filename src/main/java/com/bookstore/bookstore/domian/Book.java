@@ -36,7 +36,7 @@ public class Book implements Serializable {
 
     @Column(columnDefinition = "text")
     private String description;
-    private String inStockNumber;
+    private int inStockNumber;
 
     @Transient
     private MultipartFile bookImage;
@@ -46,7 +46,7 @@ public class Book implements Serializable {
     
     
 
-    public Book(Long id, String title, String author, String publisher, String publicationDate, String language, String category, String numberOfPages, String format, String isbn, double shippingWeight, double listPrice, double ourPrice, boolean active, String description, String inStockNumber, MultipartFile bookImage) {
+    public Book(Long id, String title, String author, String publisher, String publicationDate, String language, String category, String numberOfPages, String format, String isbn, double shippingWeight, double listPrice, double ourPrice, boolean active, String description, int inStockNumber, MultipartFile bookImage) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -270,14 +270,14 @@ public class Book implements Serializable {
     /**
      * @return the inStockNumber
      */
-    public String getInStockNumber() {
+    public int getInStockNumber() {
         return inStockNumber;
     }
 
     /**
      * @param inStockNumber the inStockNumber to set
      */
-    public void setInStockNumber(String inStockNumber) {
+    public void setInStockNumber(int inStockNumber) {
         this.inStockNumber = inStockNumber;
     }
 
