@@ -47,8 +47,8 @@ public class User implements UserDetails, Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<UserShipping> userShippingList;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<ShoppingCart> shoppingCart;
+    @OneToOne(cascade=CascadeType.ALL, mappedBy = "user")
+    private ShoppingCart shoppingCart;
 
 
     public Long getId() {
@@ -212,11 +212,11 @@ public class User implements UserDetails, Serializable {
         this.userPaymentList = userPaymentList;
     }
 
-    public List<ShoppingCart> getShoppingCart() {
+    public ShoppingCart getShoppingCart() {
         return shoppingCart;
     }
 
-    public void setShoppingCart(List<ShoppingCart> shoppingCart) {
+    public void setShoppingCart(ShoppingCart shoppingCart) {
         this.shoppingCart = shoppingCart;
     }
 }

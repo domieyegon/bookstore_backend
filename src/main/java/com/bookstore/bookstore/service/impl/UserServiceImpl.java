@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
 
             ShoppingCart shoppingCart = new ShoppingCart();
             shoppingCart.setUser(user);
-            user.setShoppingCart((List<ShoppingCart>) shoppingCart);
+            user.setShoppingCart(shoppingCart);
 
             user.setUserPaymentList(new ArrayList<UserPayment>());
             user.setUserShippingList(new ArrayList<UserShipping>());
