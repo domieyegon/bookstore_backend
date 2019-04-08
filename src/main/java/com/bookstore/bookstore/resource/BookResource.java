@@ -16,6 +16,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.util.Iterator;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -134,6 +135,13 @@ public class BookResource {
         Book book= bookService.findOne(id);
         return  book;
         
+    }
+
+    @RequestMapping(value = "/searchBook", method = RequestMethod.POST)
+    public List<Book> searchBook (@RequestBody String keyword) {
+        List<Book> bookList = bookService.blurrySearch(keyword);
+
+        return bookList;
     }
     
 }
